@@ -1,0 +1,110 @@
+/*!
+ * 
+ * MARIE Hugo Theme
+ * Licensed under MIT (https://github.com/jgeisslinger/hugo-marie/blob/master/LICENSE)
+ */
+
+/* VARIABLES ========================================================================== */
+
+// COLORS
+
+$text-color: {{ .Site.Params.Colors.Text | default "#696969" }};
+$headline-color:{{ .Site.Params.Colors.Headline | default "#63BDA2" }};
+$highlight:{{ .Site.Params.Colors.Highlight | default "#359377" }};
+
+//Bootstrap Specific Variables
+
+//Bootstrap Color Theme - Set Bootstrap Default values if not set in config.toml
+ $primary: {{ .Site.Params.Primary | default "#63BDA2" }};
+ $secondary:{{ .Site.Params.Secondary | default "#6c757d" }};
+ $light: {{ .Site.Params.Light| default "#f8f9fa" }};
+ $dark: {{ .Site.Params.Dark | default "#343a40" }};
+
+//FONTS
+@font-face{
+  font-family: 'JetBrains Mono';
+  src: 
+    url("/fonts/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format('truetype'),
+    url("/fonts/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format('woff'),
+    url("/fonts/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format('woff2');
+}
+@font-face{
+    font-family: 'Noto Regular';
+    src: url("/fonts/NotoSans/NotoSans-Regular.ttf") format('truetype');
+  }
+@font-face{
+    font-family: 'Noto Bold';
+    src: url("/fonts/NotoSans/NotoSans-Bold.ttf") format('truetype');
+  }
+
+  @font-face{
+    font-family: 'Roboto Regular';
+    src: url("/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+  }
+
+
+$font-standard: 'JetBrains Mono';
+$font-noto: 'Noto Regular';
+$font-noto-bold: 'Noto Bold';
+$font-roboto-regular: 'Roboto Regular';
+
+/*IMPORT Bootstrap  ==========================================*/
+@import "bootstrap/bootstrap.scss";
+
+
+
+/* STYLES ========================================================================== */
+
+body {
+    font-family: $font-standard;
+    font-size: 0.9em;
+    color:$text-color;
+}
+
+/* INDEX STYLES ========================================================================== */
+.index-post-meta {
+    color:$highlight;
+    float: left;
+    padding-right: 40px;
+}
+
+.link-badge {text-decoration:none;}
+.link-writings {text-decoration:none;}
+
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color:$highlight;
+}
+
+.description {
+    margin-top:20px;
+    min-height:100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:$headline-color;
+    font-family: $font-roboto-regular;
+}
+
+.title {
+    font-size:3rem;
+    font-family: $font-noto-bold;
+ }
+
+ .footer {
+    font-size:0.8rem;
+    color: #c1c1c1;
+ }
+
+ .subtitle {
+    font-size:2rem;
+    font-family: $font-noto-bold;
+ }
+
+h1 {    font-size:1.5rem; }
+h2 {    font-size:1.3rem; }
+h4 {    font-size:1.1rem; }
+
+.boxed-layout {
+    max-width:850px;
+}
