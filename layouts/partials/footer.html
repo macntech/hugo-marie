@@ -1,0 +1,17 @@
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 offset-md-3">
+                <div class="footer-inner">
+                    {{ if .Site.Params.MLnewsletter }}
+                    <div class="ml-form-embed"
+                    data-account="{{ .Site.Params.MLdataaccount }}"
+                    data-form="{{ .Site.Params.MLform }}">
+                    </div>
+                    {{ end }}
+              </div>
+
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,68 @@
+<!--
+*  MARIE Hugo Theme
+*-->
+
+<!-- Mobile Menu -->
+<div class="mobile">
+    <div class="container">
+
+      <div class="menu-toggler"><i class="fas fa-bars"></i></div>
+        <div class="logo">
+                    {{ if isset .Site.Params "logo" }}
+                        <img src="/images/{{ .Site.Params.logo }}" alt="" width="30" height="24">
+                    {{ else }}
+                        {{ .Site.Params.name}}
+                    {{ end }}
+        </div>
+    </div>
+</div>
+<div class="hide-menu"></div>
+<!-- End Mobile Menu -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="header">                
+                        <!-- Logo - Disable for mobile view-->
+                        <div class="logo logo-mobile">
+                                {{ if isset .Site.Params "logo" }}
+                                    <img src="/images/{{ .Site.Params.logo }}" alt="" width="30" height="24">
+                                {{ else }}
+                                    {{ .Site.Params.name}}
+                                {{ end }}
+                        </div>
+                        <!-- End Logo -->
+                  
+                        <!-- Navigation -->
+                        <div class="main-menu">
+                            <nav>                  
+                                <ul class="menu-list">
+                                    {{ range .Site.Menus.main }} 
+                                    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+                                    {{ end }}
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- End Navigation -->
+
+                        <!-- Socials -->
+                        <div class="socials">
+                            
+                            {{ range .Site.Params.social}}
+                            <a class="icon link-secondary" target="_blank" rel="noopener" href="{{ .url }}">
+                            <i class="fab fa-{{ lower .service }}"></i></a>
+                            {{ end }} 
+                        </div>                  
+                        <!-- End Socials -->
+
+                        <div class="fontcontroller">
+                            <p>
+                                <a class="increase">A+</a>
+                                <a class="decrease">A-</a>
+                                <a class="reset">R</a>
+                            </p>
+                        </div>       
+            </div>
+        </div>
+
+  

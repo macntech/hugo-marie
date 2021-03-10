@@ -3,6 +3,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="Johannes Geisslinger, Coding.Observer">
+
+    <!-- SEO META TAGS -->
+
+    <meta name="description" content="{{ .Site.Params.Seo.Description }}">
+    <meta name="keywords" content="{{ .Site.Params.Seo.Keywords }}">
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
@@ -67,7 +73,7 @@
     var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
     _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
     
-    var ml_account = ml('accounts', '2781907', 'j1p2f8n4c1', 'load');
+    var ml_account = ml('accounts', '{{ .Site.Params.MLaccount }}', '{{ .Site.Params.MLsecret }}', 'load');
     </script>
     <!-- End MailerLite Universal -->
 

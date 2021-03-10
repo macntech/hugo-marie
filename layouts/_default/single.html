@@ -1,0 +1,88 @@
+{{ define "main" }}
+<div class="col-md-9 col-md-offset-3 side-collapse-container">
+    <div class="tiles">
+
+        <article class="post" itemtype="http://schema.org/BlogPosting">
+            <div class="post-content">
+                <h1 class="title">{{ .Title }}</h1>
+
+                <div class="post-meta">
+                    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+                    <a href="#" class="post-date">Posted <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></a>
+                </div>
+
+                <div class="post-content resizable">
+                    <p>
+                        {{ .Content }} 
+                    </p>
+                    <div class="post-footer">
+                        <div class="post-share-wrap">
+                            <div class="post-share">
+                                <a href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-google-plus"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-pinterest"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="post-category">
+                            {{ range .Params.categories }}
+                            <strong>Categories:</strong><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>
+                            {{ end }}
+                        </div>
+
+                        <div class="post-tags">
+                            {{ range .Params.tags }}
+                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
+                            {{ end }}
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Disable comments for the time beeing 
+                <div id="comments">
+                    <h2 class="title">Comments</h2>
+                    <div class="comments-inner">
+                   
+        
+                        <div id="HCB_comment_box">
+                            <a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...
+                        </div>
+
+                        <script type="text/javascript" id="hcb"> /*<!--*/ 
+                            if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24sFFiUNMGQ.7GZEfYVs%2FJX."+"&opts=16862&num=10&ts=1615204265916");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>
+
+                        <script src="https://utteranc.es/client.js"
+                        repo="jgeisslinger/coding-observer"
+                        issue-term="title"
+                        label="💬 Blog Comment"
+                        theme="boxy-light"
+                        crossorigin="anonymous"
+                        async>
+                        </script>
+
+                    </div>
+                </div>-->
+            </div>
+        </article>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Wrapper Site -->
+
+{{ end }}
