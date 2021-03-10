@@ -3,13 +3,11 @@
 <!-- Wrapper Site -->
 <div class="col-md-9 col-md-offset-3">
     <div class="tiles">
-        {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
-        {{ $mainPosts := (sort ( where site.RegularPages "Type" "in" site.Params.mainSections ) "Date" "desc") }}
-        {{ .Scratch.Set "count" 5 }}
-            {{ if isset .Site.Params.home "posts" }}
-            {{ .Scratch.Set "count" .Site.Params.home.posts }}
-            {{ end }}
-        {{ range (first (.Scratch.Get "count") $mainPosts) }}
+        
+        {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }} 
+        {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        {{ range $paginator.Pages }}
+      
         <article class="post">
             <div class="post-content">
                 <h1 class="title">
@@ -30,37 +28,43 @@
                 <!-- End The Content -->
             </div>
         </article>
+        
         {{ end }}
 
+        
         <!-- Pagination -->
         <div class="pagination-wrap">
+        {{ if gt .Paginator.TotalPages 1 }}
             <ul>
                 <li>
-                    <a class="prev page-numbers" href="#">
+                    {{ if .Paginator.HasPrev }}
+                        <a class="prev page-numbers" href="{{ .Paginator.Prev.URL }}">
+                    {{ else }}
+                        <a class="prev page-numbers" href="#"></a>
+                    {{ end }}
                         <i class="fas fa-chevron-left"></i>
                     </a>
                 </li>
+                {{ range .Paginator.Pagers }}
                 <li>
-                    <a class="page-numbers" href="#">1</a>
+                    <a class="page-numbers" href="{{ .URL }}">{{ .PageNumber }}</a>
                 </li>
+                {{ end }}
                 <li>
-                    <span class="page-numbers current">2</span>
-                </li>
-                <li>
-                    <a class="page-numbers" href="#">3</a>
-                </li>
-                <li>
-                    <a class="page-numbers" href="#">4</a>
-                </li>
-                <li>
-                    <a class="next page-numbers" href="#">
+                    {{ if .Paginator.HasNext }}
+                        <a class="next page-numbers" href="{{ .Paginator.Next.URL }}">
+                    {{ else }}
+                        <a class="next page-numbers" href="#"></a>
+                    {{ end }}      
                         <i class="fas fa-chevron-right"></i>
                     </a>
                 </li>
             </ul>
-
+        {{ end }}
         </div>
         <!-- End Pagination -->
+
+        
     </div>
 </div>
 </div>

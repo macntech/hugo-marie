@@ -55,12 +55,25 @@ You can specify your own color theme by just editing the config.toml under the s
 ```
 There are many colors that you can change. Please refer to the example page.
 
+#### Pagination
+the theme includes a basic pagination on the index page. You can select the number of posts visible on the start page by just setting the pagination variable in the config. This automatically controls the pagination pages that are generated.
+```toml
+paginate = 2 #set the number of posts
+```
+
 #### Custom CSS 
 You can also activate custom CSS and JS to make some own changes to the theme. To do so just enable it via config.toml. You have both options, enable SCSS (which will be compiled into the main css file) or via extra CSS file.
 ```toml
 [params]
 enableCustomSCSS = true 
 enableCustomCSS = true
+```
+
+#### Custom JS
+If you need special scripts for your personal usage you can enable a custom JS file that is automatically linked before the body tag. 
+```toml
+[params]
+enableCustomJS = true 
 ```
 
 #### :mag: SEO
@@ -72,9 +85,17 @@ You should also configure basic SEO before starting up. To do so just set some b
 ```
 
 
-### :balloon: pecials
-
+### :balloon: Specials
  
+#### Social Media Links
+If you like to show your visitors your social media channels or how they can connect with you, just specify them in the config and they will be automatically added to the sidebar below the navigation. The service is named like the *fontawesome* icon. 
+```toml
+[[params.social]]
+    service = "twitter"
+    url = "https://twitter.com/"
+```
+*Note*: You must add one params.social set per link you would like to add. There is no option that you can combine multiple in one section.
+
 #### :email: Mailerlite Newsletter
 The theme includes a standard way to add your mailerlite (check out here) account for newsletter subscribtion in the footer of the page. To enable you must register with mailerlite first and create an embedded form. Afterwards you can configure your details via congig.toml
 ```toml
@@ -93,5 +114,5 @@ You can use Matomo as alternative for Google Analytics to track your visitors wi
 [params]
 MatomoServer = "https://this.server"
 MatomoSiteID = "SiteIDfromDashboard"
-
 ```
+

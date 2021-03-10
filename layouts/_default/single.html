@@ -11,6 +11,12 @@
                     <a href="#" class="post-date">Posted <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></a>
                 </div>
 
+                <div class="post-toc">
+
+                    {{ .TableOfContents }}
+                        
+                </div>
+                
                 <div class="post-content resizable">
                     <p>
                         {{ .Content }} 

@@ -16,15 +16,14 @@
 
 ============================== START SCSS ========================================================================== */
 
+//Color Sets
+
+
 // COLORS
 
-$text-color: {{ .Site.Params.Colors.Text | default "#696969" }};
-$headline-color:{{ .Site.Params.Colors.Headline | default "#63BDA2" }};
-$highlight:{{ .Site.Params.Colors.Highlight | default "#359377" }};
-
-//Bootstrap Specific Variables
-
-
+$color-text: {{ .Site.Params.Colors.Text | default "#696969" }};
+$color-headline:{{ .Site.Params.Colors.Headline | default "#000000" }};
+$color-highlight:{{ .Site.Params.Colors.Highlight | default "#359377" }};
 
 
 //Bootstrap Color Theme - Set Bootstrap Default values if not set in config.toml
@@ -56,7 +55,7 @@ $highlight:{{ .Site.Params.Colors.Highlight | default "#359377" }};
   }
 
 
-$font-standard: 'JetBrains Mono';
+$font-standard: 'Roboto Regular';
 $font-noto: 'Noto Regular';
 $font-noto-bold: 'Noto Bold';
 $font-roboto-regular: 'Roboto Regular';
@@ -108,8 +107,8 @@ h3,.h3,
 h4,.h4,
 h5,.h5,
 h6,.h6 {
-  font-family: 'Roboto Regular';
-  color: $primary;
+  font-family: $font-standard;
+  color: $color-headline;
   font-weight: 400;
   line-height: 1.2rem;
   margin-bottom: 20px;
@@ -137,16 +136,16 @@ h5,.h5 { font-size: 1.3rem; }
 h6,.h6 { font-size: 1.1rem; }
 
 body {
-  font-family: 'Roboto Regular', serif;
+  font-family: $font-standard;
   font-size: 0.9rem;
-  color: #333333;
+  color: $color-text;
   line-height: 1.5rem;
   word-spacing: 0.1rem;
 }
 
 .title {
   line-height: 1.5rem;
-  color: $primary;
+  color: $color-headline;
   font-size: 2rem;
   letter-spacing: 1px;
 }
@@ -155,7 +154,7 @@ body {
 
 .fontcontroller {
   font-size: 1rem;
-  color: $primary;
+  color: $color-text;
 }
 
 a {
@@ -312,47 +311,13 @@ body {
   margin-top:20px;
 }
 
-.kd-close {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  font-size: 24px;
-  color: #000000;
-  background-color: #ffffff;
-  line-height: 48px;
-  text-align: center;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-}
-.kd-close:before {
-  content: '';
-  width: 30px;
-  height: 2px;
-  background-color: #000000;
-  display: block;
-  -webkit-transform: rotate(44deg) translate(26px, 10px);
-  -moz-transform: rotate(44deg) translate(26px, 10px);
-  transform: rotate(44deg) translate(26px, 10px);
-}
-.kd-close:after {
-  content: '';
-  width: 30px;
-  height: 2px;
-  background-color: #000000;
-  display: block;
-  -webkit-transform: rotate(-46deg) translate(-10px, 24px);
-  -moz-transform: rotate(-46deg) translate(-10px, 24px);
-  transform: rotate(-46deg) translate(-10px, 24px);
-}
+//PAGINATION
 
 .pagination-wrap {
+  border-bottom:1px solid #e2e2e2;
   margin-top: 60px;
-  font-family: 'Roboto', serif;
+  padding-bottom: 15px;
+  font-family: $font-standard;
 }
 .pagination-wrap ul {
   list-style: none;
@@ -360,24 +325,25 @@ body {
   padding: 0;
   text-align: center;
 }
-.pagination-wrap ul:after {
-  content: '';
-  display: block;
-  clear: both;
-}
+
 .pagination-wrap ul span {
   display: block;
 }
 .pagination-wrap ul li {
   display: inline-block;
   overflow: hidden;
-  font-size: 18px;
+  font-size: 1.1  rem;
   padding-left: 5px;
   padding-right: 5px;
 }
 .pagination-wrap ul li .current {
-  color: #000000;
+  color: $color-highlight;
 }
+
+
+
+
+
 .navigation-wrap {
   margin-top: 50px;
   text-align: center;
@@ -452,6 +418,13 @@ body {
 
 /****** Single Page ******/
 
+.post-toc {
+  margin-top:20px;
+  background-color: $color-text;
+}
+
+
+
 .post-content p:last-child {
   margin-bottom: 0;
 }
@@ -476,7 +449,7 @@ body {
   margin-right: 5px;
 }
 .post-category a {
-  color: #000000;
+  color: $color-highlight;
 }
 .post-category a:after {
   content: ',';
@@ -488,7 +461,7 @@ body {
 .post-tags a {
   opacity: 1;
   display: inline-block;
-  color: #000000;
+  color: $color-highlight;
 }
 .post-tags a:before {
   margin-left: 5px;
@@ -506,13 +479,18 @@ body {
   margin-bottom: 30px;
 }
 .post-share a {
-  color: #000000;
+  color: #color-highlight;
   margin-left: 5px;
   margin-right: 5px;
 }
 .post-excerpt {
   margin-top: 20px;
 }
+
+
+
+
+
 
 /* ==================== MEDIA STYLES  ==================== */
 
