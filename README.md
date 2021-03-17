@@ -1,13 +1,15 @@
 # MARIE DRAFT STATUS
 
-A Hugo Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible to configure on your own needs. 
+A fully bootstrap resonsive Hugo Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible to configure on your own needs. 
 
 Note: This is still in draft mode and some features are not working. It is NOT requested to pull this theme or build any production page right now.
+
 
 ## :bulb: Features
 
 <img alt="SASS" src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" />
 
+MARIE includes many features build in the theme and ready for use. Some highlights are the barrier-free reading with text adjustments, build-in syntax highlighter with PrismJS including all languages, line numbers and clipboard function, newsletter support and many more. 
 
 - [x] Responsive Bootstrap Design
 - [x] Full configurable with rich featured config.toml
@@ -15,12 +17,13 @@ Note: This is still in draft mode and some features are not working. It is NOT r
 - [x] Social Media Links
 - [ ] JSON Project List for your Visitors
 - [x] Barrier-free reading
-- [ ] I18N Multilanguage support
+- [ ] I18N Multilanguage support for EN, DE, ES, FR
 - [ ] TOC templates
-- [ ] Local Search
-- [ ] Code Highlighter
+- [ ] Archive Page with List view of all posts
+- [x] Code Highlighter with PRISMJS
 - [x] Newsletter support
 - [x] Matomo and Google Analytics Support
+
 
 ## :floppy_disk: Installation
 Clone codinglover to your hugo site's `themes` folder.
@@ -33,7 +36,7 @@ Change your theme to codinglover in your site config
 
 theme = "marie"
 ```
-Config your site see configuration and test your site locally with
+Config your site see configuration or copy from example.config.toml and test your site locally with
 ```
 hugo server 
 ```

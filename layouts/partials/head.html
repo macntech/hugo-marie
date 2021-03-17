@@ -19,7 +19,11 @@
     {{ $main_style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "style.main.scss" . | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $main_style.Permalink }}" />
 
-<!-- Custom SCSS if enabled -->
+    {{ $prismcss := resources.Get "css/prism/prism.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $prismcss.Permalink }}">
+
+
+    <!-- Custom SCSS if enabled -->
     {{ if .Site.Params.enableCustomSCSS }}
         {{ $custom_style := resources.Get "css/custom.scss" | toCSS | minify | fingerprint }} 
         <link rel="stylesheet" href="{{ $custom_style.Permalink }}"/>
