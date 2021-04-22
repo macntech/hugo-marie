@@ -14,6 +14,8 @@
 *********************************************************************
 
 ============================== START SCSS ========================================================================== */
+
+
 function larger_font() { 
 	document.getElementsByTagName('html')[0].style.fontSize = "larger";
 }
@@ -58,9 +60,6 @@ function smaller_font() {
 			$(resize).css('font-size', newFontSize);
 			return false;
 		});
-		
-		
-		
 		
 		
 		/* Mobile Menu function */

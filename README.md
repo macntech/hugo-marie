@@ -14,8 +14,8 @@ MARIE includes many features build in the theme and ready for use. Some highligh
 - [x] Responsive Bootstrap Design
 - [x] Full configurable with rich featured config.toml
 - [x] Local Font Awesome Icons
-- [x] Social Media Links
-- [ ] JSON Project List for your Visitors
+- [x] Utteranc.es Comments
+- [ ] Twitter and facebook cards
 - [x] Barrier-free reading
 - [ ] I18N Multilanguage support for EN, DE, ES, FR
 - [ ] TOC templates
@@ -23,6 +23,7 @@ MARIE includes many features build in the theme and ready for use. Some highligh
 - [x] Code Highlighter with PRISMJS
 - [x] Newsletter support
 - [x] Matomo and Google Analytics Support
+- [x] Social Media Links (see Credits)
 
 
 ## :floppy_disk: Installation
@@ -110,6 +111,18 @@ The theme includes a standard way to add your mailerlite (check out here) accoun
     MLform = "3623887:o3b7m8" #the form you want to include
 ```
 
+#### :crystal_ball: Utterances Comments
+You can activate a comment section based on Utterances. Follow their how-to (https://utteranc.es) to setup your GitHub issues for collecting your comments. Afterwards configure your site as following: 
+```toml
+[params]
+ut_comments = true
+ut_repo = "yourgithubname/repo"
+ut_issue-term = "title"
+ut_label = "issue label"
+ut_theme = "boxy-light"
+```
+
+
 
 #### :bar_chart: Matomo Tracking
 You can use Matomo as alternative for Google Analytics to track your visitors with your own server instance (or use a hosted service). Just configure the parameters as following:
@@ -119,3 +132,7 @@ MatomoServer = "https://this.server"
 MatomoSiteID = "SiteIDfromDashboard"
 ```
 
+## Credits
+Finally some credits for the inspiration to the theme: 
+
+- 

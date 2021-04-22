@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
     {{- partial "head.html" . -}}
+  
     <body class="home line-numbers">
-        <div id="main-content">
-        {{- partial "header.html" . -}}
-        {{- block "main" . }}{{- end }}
+        <div id="main-content" data-barba="wrapper">
+            {{- partial "header.html" . -}}
+            {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
         <!-- Import Javascripts before body closing -->
         {{- partial "scripts.html" . -}}
     </body>
+
 </html>

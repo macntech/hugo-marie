@@ -49,16 +49,23 @@ $color-highlight:{{ .Site.Params.Colors.Highlight | default "#359377" }};
     src: url("/fonts/NotoSans/NotoSans-Bold.ttf") format('truetype');
   }
 
-  @font-face{
+ @font-face{
     font-family: 'Roboto Regular';
     src: url("/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
-  }
+}
+
+@font-face{
+  font-family: 'FontAwesome';
+  src: 
+    url("/fonts/webfonts/fa-brands-400.ttf") format('truetype');
+}
 
 
 $font-standard: 'Roboto Regular';
 $font-noto: 'Noto Regular';
 $font-noto-bold: 'Noto Bold';
 $font-roboto-regular: 'Roboto Regular';
+$font-fontawesome: 'FontAwesome';
 
 /*===================== IMPORT Bootstrap  ==========================================*/
 @import "./bootstrap/bootstrap.scss";
@@ -110,13 +117,18 @@ h6,.h6 {
   font-family: $font-standard;
   color: $color-headline;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 110%;
   margin-bottom: 20px;
-  margin-top: 0;
+  margin-top: 1rem;
 }
 
+h1:before {
+
+}
+
+
 h2:before {
-  content:""
+  
 }
 
 
@@ -173,6 +185,10 @@ a:hover {
 p {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+.justify {
+  text-align: justify;
 }
 
 img {
@@ -284,6 +300,14 @@ body {
 .main-menu .active a {
   color: #000000;
 }
+
+.main-menu a:hover:before{
+  font-family: $font-fontawesome;
+  content:"\f3ef  "
+  
+}
+
+
 .main-menu li {
   position: relative;
 }
@@ -384,7 +408,6 @@ body {
   margin-top:30px;  
 
 }
-
 
 /* ==================== POST STYLES  ==================== */
 

@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="col-md-9 col-md-offset-3 side-collapse-container">
+<div class="col-md-9 col-md-offset-3 side-collapse-container" data-barba="container">
     <div class="tiles">
 
         <article class="post" itemtype="http://schema.org/BlogPosting">
@@ -17,25 +17,14 @@
                         
                 </div>
                 
-                <div class="post-content resizable">
+                <div class="post-content resizable justify">
                     <p>
                         {{ .Content }} 
                     </p>
                     <div class="post-footer">
                         <div class="post-share-wrap">
                             <div class="post-share">
-                                <a href="#">
-                                    <i class="fab fa-facebook-square"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-twitter-square"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-pinterest-square"></i>
-                                </a>
+                                {{ partial "socialshare.html" . }}
                             </div>
                         </div>
 
@@ -54,30 +43,28 @@
                     </div>
                 </div>
                 
-                <!-- Disable comments for the time beeing 
+                <!-- Enable Section if Utterances comments are activated -->
+                {{ if .Site.Params.ut_comments }}
                 <div id="comments">
                     <h2 class="title">Comments</h2>
                     <div class="comments-inner">
                    
         
-                        <div id="HCB_comment_box">
-                            <a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...
-                        </div>
-
-                        <script type="text/javascript" id="hcb"> /*<!--*/ 
+                         <script type="text/javascript" id="hcb"> /*<!--*/ 
                             if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24sFFiUNMGQ.7GZEfYVs%2FJX."+"&opts=16862&num=10&ts=1615204265916");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>
-
                         <script src="https://utteranc.es/client.js"
-                        repo="jgeisslinger/coding-observer"
-                        issue-term="title"
-                        label="💬 Blog Comment"
-                        theme="boxy-light"
+                        repo="{{ .Site.Params.ut_repo }}"
+                        issue-term="{{ .Site.Params.ut_issueterm }}"
+                        label="{{ .Site.Params.ut_label }}"
+                        theme="{{ .Site.Params.ut_theme }}"
                         crossorigin="anonymous"
                         async>
                         </script>
 
                     </div>
-                </div>-->
+                </div>
+                {{ end }}
+
             </div>
         </article>
 
