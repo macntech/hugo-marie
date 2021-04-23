@@ -1,11 +1,19 @@
 {{ define "main" }}
-
+<!--
+*   MARIE Hugo Theme
+*   https://coding.observer
+*   Thank you for using this theme!
+*   Follow me @johannesgeisslinger
+*-->
 <!-- Wrapper Site -->
 <div class="col-md-9 col-md-offset-3" data-barba="container">
     <div class="tiles">
         
-        {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }} 
-        {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        <!-- Set Parameters -->
+            {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }} 
+            {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+        
+        <!-- Start catching all posts -->
         {{ range $paginator.Pages }}
       
         <article class="post">
@@ -21,11 +29,11 @@
                 </div>
                 <!-- End Post Metadata -->
 
-                <!-- The Content -->
+                <!-- Content -->
                 <div class="post-excerpt resizable">
                     <p>{{ .Description }}</p>
                 </div>
-                <!-- End The Content -->
+                <!-- Content End -->
             </div>
         </article>
         

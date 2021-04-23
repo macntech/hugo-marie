@@ -3,16 +3,16 @@
 
 name = "marie"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
-features = []
+licenselink = "https://github.com/jgeisslinger/hugo-marie/blob/master/LICENSE"
+description = "A resonsive bootstrap and clean Hugo Theme for with a lot of configuration options"
+homepage = "https://marie./"
+tags = ["blog", "coding","clean"]
+features = ["bootstrap", "responsive", "fontsize", "newsletter", "utterances"]
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "Johannes Geisslinger"
+  homepage = "https://coding.observer"
 
 # If porting an existing theme
 [original]

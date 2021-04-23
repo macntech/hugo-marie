@@ -1,5 +1,8 @@
 <!--
-*  MARIE Hugo Theme
+*   MARIE Hugo Theme
+*   https://coding.observer
+*   Thank you for using this theme!
+*   Follow me @johannesgeisslinger
 *-->
 
 <!-- Mobile Menu -->
@@ -61,7 +64,15 @@
                                 <a class="decrease">A-</a>
                                 <a class="reset">R</a>
                             </p>
-                        </div>       
+                        </div>    
+
+                        {{ if .Site.Params.kofi }}
+                        <div class="kofi">
+                            <a href="https://ko-fi.com/{{ .Site.Params.kofi_id }}" target="_blank">
+                                <button type="button" class="btn btn-light">{{ i18n "kofi" }}<i class="fas fa-coffee"></i></button>
+                            </a>                  
+                        </div>
+                        {{ end }}
             </div>
         </div>
 

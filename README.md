@@ -1,6 +1,6 @@
 # MARIE DRAFT STATUS
 
-A fully bootstrap resonsive Hugo Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible to configure on your own needs. 
+A fully resonsive bootstrap based HUGO Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible and easy to configure on your own needs.
 
 Note: This is still in draft mode and some features are not working. It is NOT requested to pull this theme or build any production page right now.
 
@@ -15,13 +15,14 @@ MARIE includes many features build in the theme and ready for use. Some highligh
 - [x] Full configurable with rich featured config.toml
 - [x] Local Font Awesome Icons
 - [x] Utteranc.es Comments
+- [ ] Code Highlighter with PRISM JS
+- [ ] Ko-Fi Implementation
 - [ ] Twitter and facebook cards
 - [x] Barrier-free reading
 - [ ] I18N Multilanguage support for EN, DE, ES, FR
 - [ ] TOC templates
 - [ ] Archive Page with List view of all posts
-- [x] Code Highlighter with PRISMJS
-- [x] Newsletter support
+- [x] Mailerlite Newsletter support
 - [x] Matomo and Google Analytics Support
 - [x] Social Media Links (see Credits)
 
@@ -42,6 +43,9 @@ Config your site see configuration or copy from example.config.toml and test you
 hugo server 
 ```
 
+## Demo
+For a quick demo you can visit the sample page here or check out my personal blog.
+
 
 ## :wrench: Configuration
 The theme has been build to support an *no-code* customization to your needs by just editing most of the configs directly within the config.toml. That makes it easy to fit your needs without entering the deep code. Please find below some main config that you may tackle:
@@ -59,21 +63,21 @@ You can specify your own color theme by just editing the config.toml under the s
 ```
 There are many colors that you can change. Please refer to the example page.
 
-#### Pagination
+#### :page_facing_up: Pagination
 the theme includes a basic pagination on the index page. You can select the number of posts visible on the start page by just setting the pagination variable in the config. This automatically controls the pagination pages that are generated.
 ```toml
 paginate = 2 #set the number of posts
 ```
 
-#### Custom CSS 
-You can also activate custom CSS and JS to make some own changes to the theme. To do so just enable it via config.toml. You have both options, enable SCSS (which will be compiled into the main css file) or via extra CSS file.
+#### :triangular_ruler: Custom CSS 
+You can also activate custom CSS and JS to make some own changes to the theme. To do so just enable it via config.toml. You have both options, enable SCSS (which will be compiled into the main css file) or via extra CSS file. The files you can edit are placed under assets/css
 ```toml
 [params]
 enableCustomSCSS = true 
 enableCustomCSS = true
 ```
 
-#### Custom JS
+#### :wrench: Custom JS
 If you need special scripts for your personal usage you can enable a custom JS file that is automatically linked before the body tag. 
 ```toml
 [params]
@@ -123,7 +127,6 @@ ut_theme = "boxy-light"
 ```
 
 
-
 #### :bar_chart: Matomo Tracking
 You can use Matomo as alternative for Google Analytics to track your visitors with your own server instance (or use a hosted service). Just configure the parameters as following:
 ```toml
@@ -132,7 +135,12 @@ MatomoServer = "https://this.server"
 MatomoSiteID = "SiteIDfromDashboard"
 ```
 
-## Credits
+## Credits and final words
+
+If you like the theme I would be very happy to reveive your feedback or a coffee to stay awake and continue coding nice things
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I12FSW2)
+
+
 Finally some credits for the inspiration to the theme: 
 
 - 

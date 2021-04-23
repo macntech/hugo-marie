@@ -1,4 +1,12 @@
 {{ define "main" }}
+<!--
+*   MARIE Hugo Theme
+*   https://coding.observer
+*   Thank you for using this theme!
+*   Follow me @johannesgeisslinger
+*-->
+
+<!-- Bootstrap responsive Container and preparation for barba -->
 <div class="col-md-9 col-md-offset-3 side-collapse-container" data-barba="container">
     <div class="tiles">
 
@@ -11,29 +19,35 @@
                     <a href="#" class="post-date">Posted <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></a>
                 </div>
 
+                <!-- Table of Contents -->
                 <div class="post-toc">
 
                     {{ .TableOfContents }}
                         
                 </div>
                 
+                <!-- Main Post Content -->
                 <div class="post-content resizable justify">
                     <p>
                         {{ .Content }} 
                     </p>
+                    
                     <div class="post-footer">
+                        <!-- Social Media Sharing -->
                         <div class="post-share-wrap">
                             <div class="post-share">
                                 {{ partial "socialshare.html" . }}
                             </div>
                         </div>
 
+                        <!-- Categories -->
                         <div class="post-category">
                             {{ range .Params.categories }}
                             <strong>Categories:</strong><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>
                             {{ end }}
                         </div>
 
+                        <!-- Tags -->
                         <div class="post-tags">
                             {{ range .Params.tags }}
                             <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
@@ -41,15 +55,16 @@
                         </div>
 
                     </div>
+                    <!-- Footer End -->
                 </div>
+                <!-- Main Post Content End -->
                 
-                <!-- Enable Section if Utterances comments are activated -->
+                <!-- Enable Section if Utterances comments has been activated -->
                 {{ if .Site.Params.ut_comments }}
                 <div id="comments">
-                    <h2 class="title">Comments</h2>
+                    <h2 class="title">{{ i18n "single_comments" }}</h2>
                     <div class="comments-inner">
-                   
-        
+                        <!-- Import script from Utterances page and feed parameter from config.toml-->
                          <script type="text/javascript" id="hcb"> /*<!--*/ 
                             if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24sFFiUNMGQ.7GZEfYVs%2FJX."+"&opts=16862&num=10&ts=1615204265916");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); </script>
                         <script src="https://utteranc.es/client.js"
@@ -70,6 +85,7 @@
 
     </div>
 </div>
+<!-- Container End -->
 </div>
 </div>
 </div>
