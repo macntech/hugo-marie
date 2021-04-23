@@ -4,7 +4,7 @@ A fully resonsive bootstrap based HUGO Theme for personal blogs with focus on co
 
 Note: This is still in draft mode and some features are not working. It is NOT requested to pull this theme or build any production page right now.
 
-![thumbnail](https://github.com/jgeisslinger/hugo-marie/blob/master/images/screenshot.png)
+![thumbnail](https://github.com/jgeisslinger/hugo-marie/blob/master/images/banner.png)
 
 ## :bulb: Features
 
