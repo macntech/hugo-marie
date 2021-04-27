@@ -1,0 +1,6 @@
+<div class="post-meta">
+    {{ $dataFormat := .Site.Params.dateFormat | default "2006-01-02" }}
+    <i class="post-date"><time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></i>
+    <i class="post-words">| {{ .WordCount }} {{ i18n "meta_words" }}</i>
+    <i class="post-readingtime">| {{ .ReadingTime }} {{ i18n "meta_read" }}</i>
+</div>

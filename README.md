@@ -1,8 +1,7 @@
-# MARIE DRAFT STATUS
+# MARIE
+[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.82.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.82.0)
 
 A fully resonsive bootstrap based HUGO Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible and easy to configure on your own needs.
-
-Note: This is still in draft mode and some features are not working. It is NOT requested to pull this theme or build any production page right now.
 
 ![thumbnail](https://github.com/jgeisslinger/hugo-marie/blob/master/images/banner.png)
 
@@ -10,30 +9,36 @@ Note: This is still in draft mode and some features are not working. It is NOT r
 
 <img alt="SASS" src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" />
 
-MARIE includes many features build in the theme and ready for use. Some highlights are the barrier-free reading with text adjustments, build-in syntax highlighter with PrismJS including all languages, line numbers and clipboard function, newsletter support and many more. 
+MARIE includes many features build in the theme and ready for use. Some highlights are the barrier-free reading with text adjustments, build-in syntax highlighter with PrismJS including all languages, line numbers and clipboard function as well as newsletter support and build-in utterances comments. As special MARIE also contains a dynamic file section where you can provide your post readers files to download.
 
 - [x] Responsive Bootstrap Design
 - [x] Full configurable with rich featured config.toml
 - [x] Local Font Awesome Icons
 - [x] Utteranc.es Comments
-- [ ] Code Highlighter with PRISM JS
-- [ ] Ko-Fi Implementation
-- [ ] Twitter and facebook cards
+- [x] Code Highlighter and Clipboard with PRISM JS
+- [x] Ko-Fi Implementation
+- [x] Twitter and facebook cards
 - [x] Barrier-free reading
-- [ ] I18N Multilanguage support for EN, DE, ES, FR
-- [ ] TOC templates
+- [x] Demo File Download Section for posts
+- [x] I18N Multilanguage support for EN and DE
+- [ ] Table of Content Generator
 - [ ] Archive Page with List view of all posts
 - [x] Mailerlite Newsletter support
 - [x] Matomo and Google Analytics Support
-- [x] Social Media Links (see Credits)
+- [x] Social Media Share Buttons (see Credits)
 
 
 ## :floppy_disk: Installation
-Clone codinglover to your hugo site's `themes` folder.
+Create a new hugo site (e.g. example). Move to the new directory and clone MARIE to your hugo site's `themes` folder if you are using git
+```bash
+hugo new site example
+cd example
+git init
+git submodule add https://github.com/jgeisslinger/hugo-marie.git themes/marie
 ```
-git clone https://github.com/jgeisslinger/hugo-marie.git themes/codinglover
-```
-Change your theme to codinglover in your site config
+As alternative you can also download this repo and extract into your themes folder - dont forget to rename the extracted folder to "marie".
+
+Change your theme to MARIE in your site config
 ```toml
 # config.toml
 
@@ -136,9 +141,27 @@ MatomoServer = "https://this.server"
 MatomoSiteID = "SiteIDfromDashboard"
 ```
 
+## Usage
+### New post
+To add a new post to your page just call the Hugo command 
+```bash
+hugo new posts/my-first-post.md
+```
+
+### Demo Files for Downloads
+You can easily provide your readers some files to download (like demo files or examples). To do this just add in the post frontmatter the following code
+```yaml
+Files: 
+- src: "Your URL to the file"
+  title: "The Name of the File"
+  type: "word"
+```
+You can add as much files as you like by adding more dashes. The parameter "type" controls the icon on the file link and could be anything from fontawesome beginning with "file-" (like pdf, audio, word, image, powerpoint, excel, code...).
+
 ## Credits and final words
 
 If you like the theme I would be very happy to reveive your feedback or a coffee to stay awake and continue coding nice things
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I12FSW2)
 
 

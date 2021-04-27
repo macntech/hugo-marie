@@ -1,0 +1,32 @@
+<div class="post-files">
+    <h2 class="title">{{ i18n "files_title" }}</h2>
+    <ul class="post-files-list">
+
+        {{ $length := (len .Params.Files) }}
+        {{ range $index, $elem := .Params.Files }} <!-- Create Index for Javascript element -->
+        <li>
+            {{ if $elem.type }}
+                <i class="fas fa-file-{{ $elem.type }}"></i>
+            {{ else }}
+                <i class="fas fa-file-alt"></i>
+            {{ end }}
+            <a href="{{ $elem.src }}" rel="file">{{ $elem.title }}</a>
+            <span>| 
+                {{ if $elem.type }}           
+                    {{ $elem.type }}
+                 {{ else }}
+                    {{ i18n "files_type" }}
+                {{ end }}
+            </span>
+            <span id="post-files-size {{ $index }}">| </span> MB <!-- Assign Index as CSS ID for specific JS call -->
+        </li>
+
+        <script src="/js/getfilesize.js"></script>
+        <script>
+            var url = {{ $elem.src  }};          
+            document.getElementById("post-files-size {{ $index }}").innerHTML += getFileSize(url); //Attach FileSize to Span Container
+        </script>
+
+        {{ end }}
+    </ul>
+</div>

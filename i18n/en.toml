@@ -3,3 +3,15 @@ other = "Donate a "
 
 [single_comments]
 other = "Comments"
+
+[files_title]
+other = "Files"
+
+[files_type]
+other = "Unkown"
+
+[meta_words]
+other = "words"
+
+[meta_read]
+other = "minutes read"

@@ -5,7 +5,8 @@
 *   Thank you for using this theme!
 *   Follow me @johannesgeisslinger
 *-->
-
+<div class="post-share-wrap">
+<div class="post-share">
 {{- if .Param "socialshare" }}
   {{ $title := .Title }}
   {{ $url := printf "%s" .Permalink }}
@@ -57,3 +58,5 @@
       
   {{ end }}
 {{- end }}
+</div>
+</div>

@@ -269,6 +269,7 @@ body {
 .header-text blockquote:before {
   font-size: 30px;
 }
+
 .menu-left .header {
   text-align: left;
 }
@@ -283,8 +284,9 @@ body {
 .main-menu {
   font-family: 'Roboto Regular';
   letter-spacing: 1px;
-  font-size: 18px;
-  line-height: 24px;
+  line-height: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 30px;
 }
 .main-menu ul,
 .main-menu li {
@@ -413,14 +415,14 @@ body {
 
 .post {
   margin-bottom: 40px;
-  border: 1px solid #e2e2e2;
+  border: 0px solid #e2e2e2;
 }
 .post:last-child {
   margin-bottom: 0;
 }
 .post .post-content {
   background-color: #eeeeee;
-  padding: 30px 30px 40px;
+  padding: 30px 30px 20px;
 }
 .title {
   margin-top: 0;
@@ -441,12 +443,32 @@ body {
 
 /****** Single Page ******/
 
+/** TOC Styling **/
 .post-toc {
   margin-top:20px;
-  background-color: $color-text;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-bottom: 1px dotted #000;
+  background-color: #000;
+  padding-top:10px;
+}
+
+.post-toc a{
+  font-size: 1rem;
+  color: #fff;
+  font-style: normal;
+}
+
+.post-toc a:hover {
+  color: $color-highlight;
+}
+
+.post-toc ul{
+  list-style: outside none none;
 }
 
 
+/** TOC Styling End **/
 
 .post-content p:last-child {
   margin-bottom: 0;
@@ -468,6 +490,8 @@ body {
 .post-footer {
   margin-top: 30px;
 }
+
+
 .post-category strong {
   margin-right: 5px;
 }
@@ -481,6 +505,8 @@ body {
 .post-category a:last-child:after {
   content: normal;
 }
+
+
 .post-tags a {
   opacity: 1;
   display: inline-block;
@@ -496,6 +522,7 @@ body {
 .post-tags a:hover {
   opacity: 0.8;
 }
+
 .post-share {
   text-align: center;
   padding-top: 10px;
@@ -506,13 +533,36 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
+
 .post-excerpt {
   margin-top: 20px;
 }
 
 
+.post-comments {
+  margin-top: 30px;
+  background-color: #eeeeee;
+  padding: 30px 30px 10px;
+  
+}
 
+.post-files {
+  background-color: #C7C7C7;
+  color:#000;
+  margin-top: 20px;
+  padding: 10px;
+  min-height:50px;
+}
 
+.post-files h2{padding-bottom: 15px;}
+
+.post-files a{
+  color:#000;
+}
+
+.post-files ul{
+  list-style: outside none none;
+}
 
 
 /* ==================== MEDIA STYLES  ==================== */

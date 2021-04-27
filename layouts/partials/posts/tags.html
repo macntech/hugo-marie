@@ -1,0 +1,5 @@
+<div class="post-tags">
+    {{ range .Params.tags }}
+    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>
+    {{ end }}
+</div>

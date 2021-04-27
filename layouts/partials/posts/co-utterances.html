@@ -1,0 +1,14 @@
+<!-- Import script from Utterances page and feed parameter from config.toml-->
+<div class="post-comments">
+    <h2 class="title">{{ i18n "single_comments" }}</h2>
+    <div class="comments-inner">
+        <script src="https://utteranc.es/client.js"
+            repo="{{ .Site.Params.ut_repo }}"
+            issue-term="{{ .Site.Params.ut_issueterm }}"
+            label="{{ .Site.Params.ut_label }}"
+            theme="{{ .Site.Params.ut_theme }}"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+</div>
