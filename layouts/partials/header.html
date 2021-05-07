@@ -66,6 +66,11 @@
                             </p>
                         </div>    
 
+                        <button type="button" class="btn theme-switch">
+                            <i id="switch" class="fas fa-adjust"></i>
+                        </button>
+
+
                         {{ if .Site.Params.kofi }}
                         <div class="kofi">
                             <a href="https://ko-fi.com/{{ .Site.Params.kofi_id }}" target="_blank">
@@ -73,6 +78,19 @@
                             </a>                  
                         </div>
                         {{ end }}
+
+
+
+                    {{ if .Site.Params.Toc }}
+                        {{ if .IsPage }}
+                        <!-- Table of Contents -->
+                        <div class="post-toc">
+                            <div class="post-toc-header">Content</div> 
+                            {{ .TableOfContents }}
+                        </div>
+                        {{ end }}
+                    {{ end }}
+
             </div>
         </div>
 

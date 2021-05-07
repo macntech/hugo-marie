@@ -1,0 +1,215 @@
+/* ==================== POST STYLES  ==================== */
+
+/*
+//Auto numbering
+body {counter-reset: h1}
+h1 {counter-reset: h2}
+h2 {counter-reset: h3}
+h3 {counter-reset: h4}
+h4 {counter-reset: h5}
+
+.autonumbering h1:before {counter-increment: h1; content: counter(h1) ". "}
+.autonumbering h2:before {counter-increment: h2; content: counter(h1) "." counter(h2) ". "}
+.autonumbering h3:before {counter-increment: h3; content: counter(h1) "." counter(h2) "." counter(h3) ". "}
+.autonumbering h4:before {counter-increment: h4; content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) ". "}
+
+.autonumbering .post-toc ul { counter-reset: item }
+.autonumbering .post-toc li a:before { content: counters(item, ".") ". "; counter-increment: item }
+
+//*/
+
+
+.post-header{
+    background-color: $grey-2;
+    padding: 20px 30px 10px;
+    margin-bottom: 7px;
+  }
+  
+  .post-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta a {
+    display: inline-block;
+    font-style: normal;
+  }
+  
+  .post-meta a:after {
+    content: '|';
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .post-meta a:last-child:after {
+    content: normal;
+  }
+  
+  .post-excerpt {
+    padding: 20px 30px 20px;
+    background-color: var(--color-secondary);
+  }
+  
+  .post-readmore {
+    background-color: var(--color-secondary);
+    margin-top: 7px;
+    padding: 5px 30px 5px;
+  }
+  
+  
+  .post {
+    margin-bottom: 40px;
+    border: 0px solid #e2e2e2;
+  }
+  .post:last-child {
+    margin-bottom: 0;
+  }
+  .post .post-content {
+    background-color: var(--color-secondary);
+    padding: 20px 30px 20px;
+  }
+  
+  
+  /****** Single Page ******/
+  
+  /** TOC Styling **/
+  .post-toc {
+    margin-top:20px;
+    margin-left: 25px;
+    //margin-right: 25px;
+    //border-bottom: 1px dotted #000;
+    padding-top:10px;
+  }
+  
+  .post-toc a{
+    font-size: 1rem;
+    font-style: normal;
+  }
+  
+  .post-toc a:hover {
+    color: var(--color-ahover);
+  }
+  
+  .post-toc ul{
+    list-style: outside none none;
+  }
+
+  .post-toc-header{
+    color: var(--color-primary);
+    text-align: right;
+    text-decoration: underline;
+    font-size: $font-size-3;
+    padding-bottom: 10px;
+  }
+  
+  @media screen and (max-width: 991px) {
+
+    .post-toc {
+      color: $white;    
+      text-align: left;
+    }
+
+    .post-toc a:hover {
+      color: $white;
+    }
+
+    .post-toc-header{
+      color: var(--color-primary);
+      text-align: center;
+    }
+
+  } 
+
+
+
+  
+  /** TOC Styling End **/
+  
+  .post-content p:last-child {
+    margin-bottom: 0;
+  }
+  .post-content ul,
+  .post-content ol {
+    font-size: 13px;
+    font-style: normal;
+    padding-left: 20px;
+  }
+  .post-content ul li,
+  .post-content ol li {
+    margin-bottom: 5px;
+  }
+  .post-content ul > li:last-child,
+  .post-content ol > li:last-child {
+    margin-bottom: 0;
+  }
+  .post-footer {
+    margin-top: 30px;
+  }
+  
+  
+  .post-category strong {
+    margin-right: 5px;
+  }
+  .post-category a {
+    color: $color-highlight;
+  }
+  .post-category a:after {
+    content: ',';
+    margin-right: 5px;
+  }
+  .post-category a:last-child:after {
+    content: normal;
+  }
+  
+  
+  .post-tags a {
+    opacity: 1;
+    display: inline-block;
+    color: $color-highlight;
+  }
+  .post-tags a:before {
+    margin-left: 5px;
+    content: '#';
+  }
+  .post-tags a:first-child:before {
+    margin-left: 0;
+  }
+  .post-tags a:hover {
+    opacity: 0.8;
+  }
+  
+  .post-share {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 30px;
+  }
+  .post-share a {
+    color: #color-highlight;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  
+  
+  .post-comments {
+    margin-top: 30px;
+    background-color: var(--color-secondary);
+    padding: 30px 30px 10px;
+    
+  }
+  
+  .post-files {
+    background-color: #C7C7C7;
+    color:#000;
+    margin-top: 20px;
+    padding: 10px;
+    min-height:50px;
+  }
+  
+  .post-files h2{padding-bottom: 15px;}
+  
+  .post-files a{
+    color:#000;
+  }
+  
+  .post-files ul{
+    list-style: outside none none;
+  }

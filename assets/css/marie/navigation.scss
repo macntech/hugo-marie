@@ -1,0 +1,154 @@
+/*
+*  MARIE Navigation Styles
+*/
+
+.menu-left .header {
+    text-align: left;
+  }
+
+.menu-left .main-menu .sub-menu {
+    padding-left: 0;
+    padding-right: 20px;
+    right: 100%;
+    left: auto;
+    text-align: right;
+}
+  
+.main-menu {
+    font-family: 'Roboto Regular';
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 30px;
+}
+
+.main-menu ul,
+.main-menu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-menu .menu-list > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: block;
+}
+
+.main-menu .active a {
+    color: var(--color-ahover);
+}
+  
+.main-menu a:hover:before{
+    font-family: $font-fontawesome;
+    content:"\f3ef  "
+}
+  
+.main-menu li {
+    position: relative;
+}
+
+
+
+.hide-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0.3s ease, opacity 0.3s ease;
+    -moz-transition: visibility 0.3s ease, opacity 0.3s ease;
+    -ms-transition: visibility 0.3s ease, opacity 0.3s ease;
+    -o-transition: visibility 0.3s ease, opacity 0.3s ease;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+
+.mobile {
+    display: none;
+    margin-bottom: 60px;
+}
+  
+.mobile .menu-toggler {
+    display: block;
+    font-size:1.5rem;
+    width: 22px;
+    height: 1px;
+    background-color: #fff;
+    display: inline-block;
+    position: fixed;
+    z-index: 999;
+}
+  
+  .mobile .logo {
+    padding-bottom: 0;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  
+  .logo {
+    font-size: 40px;
+    color: var(--color-logo);
+    text-transform: uppercase;
+    padding-bottom: 60px;
+    letter-spacing: 2px;
+    line-height: 40px;
+  }
+  .logo a {
+    color: inherit;
+  }
+  .socials {
+    padding-top: 50px;
+  }
+  .socials a {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .fontcontroller {
+    margin-top:20px;
+  }
+  
+  .fontcontroller a{
+    cursor: pointer;
+  }
+
+#switch {
+  color: var(--color-bw);
+}
+
+
+.navigation-wrap {
+    margin-top: 50px;
+    text-align: center;
+  }
+  .navigation-wrap:after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+  .navigation-wrap a {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    background-color: #cccccc;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    -ms-transition: opacity 0.3s ease;
+    -o-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+  }
+  .navigation-wrap a:last-child {
+    margin-right: 0;
+  }
+  .navigation-wrap a:hover {
+    opacity: 0.8;
+  }

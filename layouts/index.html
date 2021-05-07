@@ -17,24 +17,26 @@
         {{ range $paginator.Pages }}
       
         <article class="post">
-            <div class="post-content">
-                <h1 class="title">
+            
+            <div class="post-header">
+                <h1 class="post-title">
                     <a href="{{ .Permalink }}">{{- .Title -}}</a>
                 </h1>
-
                 <!-- Post Metadata -->
-                <div class="post-meta">
-                    <a href="#" class="post-date">Posted <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format $dataFormat }}</time></a>	
-                    <a href="#" class="post-categorie">{{ range .Params.categories }}{{ . }}{{ end }}</a>
-                </div>
-                <!-- End Post Metadata -->
-
-                <!-- Content -->
+                {{ partial "posts/meta.html" . }}
+            <!-- End Post Metadata -->
+            </div>
+                       
+                              <!-- Content -->
                 <div class="post-excerpt resizable">
                     <p>{{ .Description }}</p>
                 </div>
                 <!-- Content End -->
-            </div>
+                
+                <div class="post-readmore resizable">
+                    {{ partial "posts/category.html" . }}
+                </div>
+
         </article>
         
         {{ end }}

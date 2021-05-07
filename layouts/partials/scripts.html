@@ -5,3 +5,29 @@
 
 {{ $prismjs := resources.Get "js/prism/prism.js" | minify | fingerprint }}
 <script src="{{ $prismjs.Permalink }}"></script>
+
+<!-- Cookie Consent for GDPR Banner if needed -->
+{{ if .Site.Params.cookiebanner }}                          
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "{{ .Site.Params.cb_textbg | default "#ffffff"}}",
+      "text": "{{ .Site.Params.cb_textcolor | default "#404040"}}"
+    },
+    "button": {
+      "background": "{{ .Site.Params.cb_buttonbg | default "#000000" }}",
+      "text": "{{ .Site.Params.cb_buttontextcolor | default "#ffffff"}}"
+    }
+  },
+  "showLink": false,
+  "theme": "edgeless",
+  "position": "bottom-left",
+  "content": {
+    "message": "{{ .Site.Params.cb_text | default "We use cookies to ensure you have a great experience."}}",
+    "dismiss": "{{ .Site.Params.cb_buttontext | default "Accept"}}"
+  }
+});
+</script>
+{{ end }}

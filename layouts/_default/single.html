@@ -10,20 +10,17 @@
 <div class="col-md-9 col-md-offset-3 side-collapse-container" data-barba="container">
     <div class="tiles">
 
-        <article class="post" itemtype="http://schema.org/BlogPosting">
-            <div class="post-content">
-                <h1 class="title">{{ .Title }}</h1>
-
+        <article class="post {{- if .Param "autonumbering" }} autonumbering {{- end }}" itemtype="http://schema.org/BlogPosting">
+            
+            <div class="post-header">
+                
+                <div class="post-title">{{ .Title }}</div>
                 {{ partial "posts/meta.html" . }}
-
-                {{ if .Site.Params.Toc }}
-                <!-- Table of Contents -->
-                <div class="post-toc">
-
-                    {{ .TableOfContents }}
-                        
-                </div>
-                {{ end }}
+            
+            </div>
+            
+            <div class="post-content">
+                
                 
                 <!-- Main Post Content -->
                 <div class="post-content resizable justify">

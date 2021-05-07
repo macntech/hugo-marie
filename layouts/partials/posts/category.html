@@ -1,5 +1,6 @@
 <div class="post-category">
+    <strong>Categories</strong>
     {{ range .Params.categories }}
-    <strong>Categories:</strong><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>
+        <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>
     {{ end }}
 </div>

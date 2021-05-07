@@ -1,13 +1,16 @@
 # MARIE
-[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=0.82.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.82.0)
 
 A fully resonsive bootstrap based HUGO Theme for personal blogs with focus on coding and tech. The theme has lot of features to discover and fully flexible and easy to configure on your own needs.
 
-![thumbnail](https://github.com/jgeisslinger/hugo-marie/blob/master/images/banner.png)
-
 ## :bulb: Features
 
-<img alt="SASS" src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/> <img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/> <img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/> <img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/> <img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" />
+<img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> 
+<img alt="SASS" src="https://img.shields.io/badge/SASS%20-hotpink.svg?&style=for-the-badge&logo=SASS&logoColor=white"/>
+<img alt="Bootstrap" src="https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white"/>
+<img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/>
+<img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+<img alt="jQuery" src="https://img.shields.io/badge/jquery-%230769AD.svg?&style=for-the-badge&logo=jquery&logoColor=white"/>
+<img alt="Ko-Fi" src="https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white" />
 
 MARIE includes many features build in the theme and ready for use. Some highlights are the barrier-free reading with text adjustments, build-in syntax highlighter with PrismJS including all languages, line numbers and clipboard function as well as newsletter support and build-in utterances comments. As special MARIE also contains a dynamic file section where you can provide your post readers files to download.
 
@@ -21,7 +24,7 @@ MARIE includes many features build in the theme and ready for use. Some highligh
 - [x] Barrier-free reading
 - [x] Demo File Download Section for posts
 - [x] I18N Multilanguage support for EN and DE
-- [ ] Table of Content Generator
+- [x] Table of Content Generator
 - [ ] Archive Page with List view of all posts
 - [x] Mailerlite Newsletter support
 - [x] Matomo and Google Analytics Support
@@ -54,29 +57,27 @@ For a quick demo you can visit the sample page here or check out my personal blo
 
 
 ## :wrench: Configuration
-The theme has been build to support an *no-code* customization to your needs by just editing most of the configs directly within the config.toml. That makes it easy to fit your needs without entering the deep code. Please find below some main config that you may tackle:
+The theme has been build to support a *no-code* customization by just editing most of the customizations directly within the config.toml. This makes it easy to fit your needs without entering the deep code. Please find below some main config that you may tackle:
 
 ### Basics
 
 #### :art: Color
-You can specify your own color theme by just editing the config.toml under the special params.colors section. You can select the basic color theme or just set individual colors as you like. The standard theme is grey/black/white. 
+Marie supports two main themes from the scratch. This is a light theme mainly white/grey and a dark theme. The default is the light theme. You can switch to default dark theme by adding to the config.toml
 ```toml
-[params.colors]
-    Text = "#696969"
-    Headline = "#63BDA2" 
-    Highlight= "#359377"
-    Primary = "#63BDA2"
+[params]
+theme = "dark"
 ```
-There are many colors that you can change. Please refer to the example page.
+The user can always switch between light and dark through the theme switcher. 
 
 #### :page_facing_up: Pagination
-the theme includes a basic pagination on the index page. You can select the number of posts visible on the start page by just setting the pagination variable in the config. This automatically controls the pagination pages that are generated.
+The theme includes a basic pagination on the index and archive pages. You can select the number of posts visible on the start page by just setting the pagination variable in the config. This automatically controls the pagination pages that are generated.
 ```toml
+[params]
 paginate = 2 #set the number of posts
 ```
 
 #### :triangular_ruler: Custom CSS 
-You can also activate custom CSS and JS to make some own changes to the theme. To do so just enable it via config.toml. You have both options, enable SCSS (which will be compiled into the main css file) or via extra CSS file. The files you can edit are placed under assets/css
+You can also activate custom CSS to make some own changes to the theme. To do so just enable it via config.toml. You have both options, enable SCSS (which will be compiled into the main css file) or via extra CSS file. The files you can edit are placed under assets/css
 ```toml
 [params]
 enableCustomSCSS = true 
@@ -98,6 +99,22 @@ You should also configure basic SEO before starting up. To do so just set some b
     keywords = "Hugo, Theme, Marie"
 ```
 
+#### :cookie: Cookies 
+If you use cookies in your theme (like with Matomo, theme switcher etc.) you may want to inform your visitors about this. MARIE uses the famous cookieconsent JS plugin to manage your cookie banner. However, you can adjust the banner to your needs with the following parameter in the params section of your config.toml.
+
+```toml
+[params]
+    cookiebanner = true #activate the banner
+    
+    cb_buttontext = "Accept" #text of the banner button
+    cb_buttonbg = "#000000" #color of the button
+    cb_buttontextcolor = "#ffffff" #color of the text
+    
+    cb_text = "Your text goes here" #Information text for the visitor
+    cb_textbg = "#c4c4c4" #color of the text field
+    cb_textcolor = "#000000" #color of the text
+```
+
 
 ### :balloon: Specials
  
@@ -108,7 +125,7 @@ If you like to show your visitors your social media channels or how they can con
     service = "twitter"
     url = "https://twitter.com/"
 ```
-*Note*: You must add one params.social set per link you would like to add. There is no option that you can combine multiple in one section.
+*Note*: You must add one params.social group per link you would like to add. There is no option that you can combine multiple in one section.
 
 #### :email: Mailerlite Newsletter
 The theme includes a standard way to add your mailerlite (check out here) account for newsletter subscribtion in the footer of the page. To enable you must register with mailerlite first and create an embedded form. Afterwards you can configure your details via congig.toml
@@ -132,14 +149,23 @@ ut_label = "issue label"
 ut_theme = "boxy-light"
 ```
 
-
 #### :bar_chart: Matomo Tracking
 You can use Matomo as alternative for Google Analytics to track your visitors with your own server instance (or use a hosted service). Just configure the parameters as following:
 ```toml
 [params]
+Matomo = true
 MatomoServer = "https://this.server"
-MatomoSiteID = "SiteIDfromDashboard"
+MatomoSiteID = "SiteIDfromDashboaHird"
 ```
+
+#### Table of Content
+Marie supports automatic table of content generation. Activate it by adding
+```toml
+[params]
+toc = true;
+```
+to you config.toml. The TOC will be published under the navigation on the left menu or mobile menu.
+
 
 ## Usage
 ### New post
@@ -148,23 +174,32 @@ To add a new post to your page just call the Hugo command
 hugo new posts/my-first-post.md
 ```
 
-### Demo Files for Downloads
-You can easily provide your readers some files to download (like demo files or examples). To do this just add in the post frontmatter the following code
+### File Downloads
+You can easily provide your readers some files to download (like demo files or examples). To do this just add in the post frontmatter the following code snippet
 ```yaml
 Files: 
 - src: "Your URL to the file"
   title: "The Name of the File"
   type: "word"
 ```
-You can add as much files as you like by adding more dashes. The parameter "type" controls the icon on the file link and could be anything from fontawesome beginning with "file-" (like pdf, audio, word, image, powerpoint, excel, code...).
+You can add as much files as you like by adding more dashes under the Files section. The parameter "type" controls the icon on the file link and could be anything from fontawesome beginning with "file-" (like pdf, audio, word, image, powerpoint, excel, code...).
 
-## Credits and final words
+## Credits
+
+Finally some credits for the good work on the resources used in this theme: 
+
+- [Font Awesome](https://fontawesome.com/)
+- [Bootstrap](https://bootstrap.com/)
+- [Prism.JS]()
+- [cookieconsent](https://github.com/osano/cookieconsent)
+
+## Sponsor
 
 If you like the theme I would be very happy to reveive your feedback or a coffee to stay awake and continue coding nice things
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I12FSW2)
 
+Follow me on Twitter for any news
 
-Finally some credits for the inspiration to the theme: 
+<img alt="Twitter" src="https://img.shields.io/badge/b1cKberry-%231DA1F2.svg?&style=for-the-badge&logo=Twitter&logoColor=white"/>
 
-- 

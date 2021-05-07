@@ -10,12 +10,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no" />
-    <meta name="author" content="Johannes Geisslinger, Coding.Observer">
+    
+    {{ if or (.Params.author) (.Site.Params.author) }}
+        <meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.author }}{{ end }}" />
+    {{ end }}
 
     <!-- SEO META TAGS -->
-
-    <meta name="description" content="{{ .Site.Params.Seo.Description }}">
-    <meta name="keywords" content="{{ .Site.Params.Seo.Keywords }}">
+    {{ if (.Site.Params.Seo.Description) }}
+        <meta name="description" content="{{ .Site.Params.Seo.Description }}">
+    {{ end }}
+    
+    {{ if (.Site.Params.Seo.Keywords) }}
+        <meta name="keywords" content="{{ .Site.Params.Seo.Keywords }}">
+    {{ end }}
 
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
 
@@ -28,6 +35,10 @@
 
     {{ $prismcss := resources.Get "css/prism/prism.css" | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $prismcss.Permalink }}">
+
+    {{ if .Site.Params.cookiebanner }}  
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    {{ end }}
 
 <!-- Custom CSS if enabled -->
     {{ if .Site.Params.enableCustomCSS }}

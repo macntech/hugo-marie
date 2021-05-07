@@ -1,0 +1,83 @@
+//Color Sets
+//$color-text: {{ .Site.Params.Colors.Text | default "#696969" }};
+
+$light-color-bg: #ffffff;
+$light-color-primary:#A9A9A9;
+$light-color-secondary: #EEEEEE;
+$light-color-font: #696969;
+$light-color-headline: #000000;
+$light-color-title: #ffffff;
+$light-color-highlight: #359377;
+$light-color-logo: #000000;
+$light-color-ahover: #000000;
+$light-color-bw: rgba(33, 33, 33, 1.0);
+
+$dark-color-bg: rgba(33, 33, 33, 1.0);
+$dark-color-primary:#A9A9A9;
+$dark-color-secondary: #696969;
+$dark-color-font: #EEEEEE;
+$dark-color-headline: #000000;
+$dark-color-title: #000000;
+$dark-color-highlight: #359377;
+$dark-color-logo: #ffffff;
+$dark-color-ahover: #ffffff;
+$dark-color-bw: #ffffff;
+
+// COLORS
+
+$color-text:      #696969;
+$color-headline:  #000000;
+$color-highlight: #359377;
+
+$grey-0:          #EEEEEE; // HTML White Smoke
+$grey-1:          #D3D3D3; // HTML Light Grey
+$grey-2:          #A9A9A9; // HTML Dark Grey
+$grey-3:          #808080; // HTML Grey
+
+//Bootstrap Color Theme - Set Bootstrap Default values if not set in config.toml
+$primary:   #000000;
+$secondary: #6c757d;
+$light:     #f8f9fa;
+$dark:      #343a40;
+
+
+//FONTS
+@font-face{
+  font-family: 'JetBrains Mono';
+  src: 
+    url("/fonts/JetBrainsMono/ttf/JetBrainsMono-Regular.ttf") format('truetype'),
+    url("/fonts/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff") format('woff'),
+    url("/fonts/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2") format('woff2');
+}
+@font-face{
+    font-family: 'Noto Regular';
+    src: url("/fonts/NotoSans/NotoSans-Regular.ttf") format('truetype');
+  }
+@font-face{
+    font-family: 'Noto Bold';
+    src: url("/fonts/NotoSans/NotoSans-Bold.ttf") format('truetype');
+  }
+
+ @font-face{
+    font-family: 'Roboto Regular';
+    src: url("/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face{
+  font-family: 'FontAwesome';
+  src: 
+    url("/fonts/webfonts/fa-brands-400.ttf") format('truetype');
+}
+
+
+$font-standard: 'Roboto Regular';
+$font-noto: 'Noto Regular';
+$font-noto-bold: 'Noto Bold';
+$font-roboto-regular: 'Roboto Regular';
+$font-fontawesome: 'FontAwesome';
+
+$font-size-0: 0.5rem; 
+$font-size-1: 0.75rem; 
+$font-size-2: 1rem;
+$font-size-3: 1.25rem; 
+$font-size-4: 1.5rem;

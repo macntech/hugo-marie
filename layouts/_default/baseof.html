@@ -2,7 +2,7 @@
 <html>
     {{- partial "head.html" . -}}
   
-    <body class="home line-numbers">
+    <body class="home line-numbers" data-theme="{{ .Site.Params.theme | default "light" }}"> <!-- set prism.js and theme selector -->
         <div id="main-content" data-barba="wrapper">
             {{- partial "header.html" . -}}
             {{- block "main" . }}{{- end }}
