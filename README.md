@@ -27,8 +27,11 @@ MARIE includes many features build in the theme and ready for use. Some highligh
 
 ## Table of Contents
 
-- [Installation](#Installation)
-
+- [Installation](#floppy_disk-installation)
+- [Configuration](#wrench-configuration)
+- [Usage](#usage)
+- [Credits](#credits)
+- [Sponsor](#sponsor)
 
 
 ## :floppy_disk: Installation
